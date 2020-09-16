@@ -1,0 +1,243 @@
+﻿<Window x:Class="Test.MainWindow"   Margin="-1022,0,2,0"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test"
+        mc:Ignorable="d"
+        Title="Test" Height="1052.5" Width="1922.5" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+
+
+        <Style TargetType="Button">
+            <Setter Property="FontFamily"   Value="Arial"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+
+            <Setter Property="MinWidth" Value="60"/>
+            <Setter Property="Height" Value="125"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontFamily"   Value="Arial"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="MinWidth" Value="60"/>
+            <Setter Property="Height" Value="125"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+
+
+
+        <local:Conv_Titel x:Key="Con_Titel"/>
+    </Window.Resources>
+
+    <Grid Margin="-1032,0,2,0" RenderTransformOrigin="0.502,0.527">
+
+        <!--<Border BorderThickness="10" CornerRadius="0,0,1,100" BorderBrush="#FFFFDC00" Margin="1030,0,-1034,1" RenderTransformOrigin="0.498,0.549">
+         
+        </Border>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="550" ></RowDefinition>
+            <RowDefinition Height="450" ></RowDefinition>
+
+
+        </Grid.RowDefinitions>
+
+        <Label Content="Patienten Verwaltung - WPF Anwendung zu verwendete Daten (Reinenfolge ist zufällig):" HorizontalAlignment="Left" Height="73" Margin="1063,15,0,0" FontSize="36" VerticalAlignment="Top" Width="1685" FontWeight="Bold"/>
+        <Label Content="Nachname:" HorizontalAlignment="Left" Height="49" Margin="1128,240,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="Vorname:" HorizontalAlignment="Left" Height="49" Margin="1128,324,0,0" VerticalAlignment="Top" Width="128"/>
+        <Label Content="Geburtsdatum:" HorizontalAlignment="Left" Height="49" Margin="1128,400,0,0" VerticalAlignment="Top" Width="166"/>
+        <Label Content="Titel:" HorizontalAlignment="Left" Height="49" Margin="1128,169,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label Content="Geschlecht:" HorizontalAlignment="Left" Height="49" Margin="1128,472,0,0" VerticalAlignment="Top" Width="166"/>
+        <Label Content="Patient-Nr:" HorizontalAlignment="Left" Height="49" Margin="1787,97,0,0" VerticalAlignment="Top" Width="209"/>
+        <Label Content="Straße:" HorizontalAlignment="Left" Height="49" Margin="1787,256,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="PLZ:" HorizontalAlignment="Left" Height="49" Margin="1787,332,0,0" VerticalAlignment="Top" Width="63"/>
+        <Label Content="Stadt:" HorizontalAlignment="Left" Height="49" Margin="1787,399,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Land:" HorizontalAlignment="Left" Height="49" Margin="1787,472,0,0" VerticalAlignment="Top" Width="81"/>
+
+
+        <TextBox Name="txt_Nachname" HorizontalAlignment="Left" Height="49" Margin="1312,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontFamily="Arial" FontSize="24" />
+
+        <TextBox Name="txt_Vorname" HorizontalAlignment="Left" Height="59" Margin="1312,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontFamily="Arial" FontSize="24"/>
+        <TextBox Name="txt_Geburtsdatum" HorizontalAlignment="Left" Height="60" Margin="1312,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontFamily="Arial" FontSize="24"/>
+        <TextBox Name="txt_Patient_Nr" HorizontalAlignment="Left" Height="54" Margin="1902,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" FontFamily="Arial" FontSize="24"/>
+        <TextBox Name="txt_Strasse" HorizontalAlignment="Left" Height="59" Margin="1902,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" FontFamily="Arial" FontSize="24"/>
+        <TextBox Name="txt_PLZ" HorizontalAlignment="Left" Height="60" Margin="1902,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" FontFamily="Arial" FontSize="24"/>
+        <TextBox Name="txt_Stadt" HorizontalAlignment="Left" Height="59" Margin="1902,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" FontFamily="Arial" FontSize="24"/>
+
+
+        <ComboBox Name="cbo_Titel" HorizontalAlignment="Left" Height="54" Margin="1312,164,0,0" VerticalAlignment="Top" Width="290" RenderTransformOrigin="-0.429,0.097" FontFamily="Arial" FontSize="24" >
+            <ComboBoxItem Content="Herr" />
+            <ComboBoxItem Content="Frau" />
+        </ComboBox>
+
+
+        <ComboBox Name="cbo_Geschlecht" HorizontalAlignment="Left" Height="57" Margin="1308,464,0,0" VerticalAlignment="Top" Width="290" FontFamily="Arial" FontSize="24">
+            <ComboBoxItem Content="Weiblich" />
+            <ComboBoxItem Content="Männlich" />
+        </ComboBox>
+
+        <ComboBox Name="cbo_Verantw_Arzt" SelectedValue="ID" DisplayMemberPath="Header" HorizontalAlignment="Left" Height="54" Margin="2416,88,0,0" VerticalAlignment="Top" Width="302" FontFamily="Arial" FontSize="24">
+            <!--<ComboBoxItem Content="Ali" />
+            <ComboBoxItem Content="Omer" />-->
+        </ComboBox>
+
+
+        <ComboBox Name="cbo_Land" SelectedValue="ID" DisplayMemberPath="Header" HorizontalAlignment="Left" Height="57" Margin="1902,464,0,0" VerticalAlignment="Top" Width="302" RenderTransformOrigin="-0.221,-0.153" FontFamily="Arial" FontSize="24">
+            <!--<ComboBoxItem Content="Deutschland"  />
+            <ComboBoxItem Content="Österreich" />-->
+
+        </ComboBox>
+        <Label Content="Verantw. Arzt:" HorizontalAlignment="Left" Height="49" Margin="2261,93,0,0" VerticalAlignment="Top" Width="134"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Height="49" Margin="2393,472,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Mobile:" HorizontalAlignment="Left" Height="49" Margin="2393,400,0,0" VerticalAlignment="Top" Width="67"/>
+        <Label Content="Fax:" HorizontalAlignment="Left" Height="49" Margin="2393,324,0,0" VerticalAlignment="Top" Width="67"/>
+
+
+        <TextBox Name="txt_Email" HorizontalAlignment="Left" Height="59" Margin="2498,462,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" FontFamily="Arial" FontSize="24"/>
+        <TextBox Name="txt_Mobile" HorizontalAlignment="Left" Height="59" Margin="2498,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" FontFamily="Arial" FontSize="24" />
+        <TextBox Name="txt_Fax" HorizontalAlignment="Left" Height="60" Margin="2498,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" FontFamily="Arial" FontSize="24"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="2767,15,0,0" VerticalAlignment="Top" Width="154" Source="praxis_foto.png"/>
+
+
+
+        <StackPanel HorizontalAlignment="Left" Height="447" Margin="1048,8,-1032,-4" Grid.Row="1" VerticalAlignment="Top" Width="2258">
+            <ListView Name="LV_Test" Height="286" Margin="10,10,364,0">
+
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="100" Header="Titel">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+
+                                    <TextBlock Text="{Binding titel ,Converter={StaticResource Con_Titel} }"/>
+                                    <!--الفوق يكون تحويل الرقم الى النص-->
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+
+                        <GridViewColumn Width="140" Header="Nachname">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding nachname}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="140" Header="Vorname">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding vorname}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="100" Header="Geburtsdatum">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding geburtsdatum}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="100" Header="Geschlecht">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding geschlecht}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="100" Header="Geburtsdatum">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding geburtsdatum}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="150" Header="Straße">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding strasse}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="100" Header="PLZ">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding plz}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="150" Header="Stadt">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding stadt}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="200" Header="Land">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding land}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="200" Header="Fax">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding fax}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="200" Header="Mobile">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding mobile}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                        <GridViewColumn Width="200" Header="E-Mail">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding email}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--**************************************************-->
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+
+            <StackPanel Orientation="Horizontal" Height="160" Margin="0,0,364,0">
+                <Button Name="Btn_Add" Content="Add" Background="#FF68FF68" Margin="160,18,0,17" Click="Btn_Add_Click"/>
+                <Button Name="Btn_Delete" Content="Delete" Background="Red" Margin="100,18,0,17"/>
+                <Button Name="Btn_Refresh" Content="Refresh" Background="Yellow" Margin="100,18,0,17" Click="Btn_Refresh_Click"/>
+                <Button Name="Btn_Edit" Content="Edit" Background="#FFAFFFFF" Margin="100,18,0,17"/>
+                <Button x:Name="Btn_Close"  Margin="100,18,0,17" Click="Btn_Close_Click" Width="233">
+                    <Button.Background>
+                        <ImageBrush ImageSource="exit.jpg"/>
+                    </Button.Background>
+
+                </Button>
+
+
+            </StackPanel>
+
+        </StackPanel>
+        <Label Content="Persönliche Daten" HorizontalAlignment="Left" Height="39" Margin="1342,119,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" FontSize="24"/>
+        <Label Content="Adressdaten " HorizontalAlignment="Left" Height="55" Margin="1980,191,0,0" VerticalAlignment="Top" Width="170" FontWeight="Bold" FontSize="24" RenderTransformOrigin="0.638,0.464"/>
+        <Label Content="Kontaktdaten" HorizontalAlignment="Left" Height="43" Margin="2562,262,0,0" VerticalAlignment="Top" Width="186" FontWeight="Bold" FontSize="24"/>
+
+    </Grid>
+</Window>
